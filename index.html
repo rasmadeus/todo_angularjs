@@ -8,7 +8,9 @@
 	</head>
 	<body ng-controller="TasksController">
 		<h1>To Do notes</h1>
-                <input id="newTaskTest" type="text" ng-model="newTask"  size="30"  placeholder="Describe here a new task and press Enter" ng-keyup="addNewTask()"/>
+		<form ng-submit="addNewTask()">
+                <input id="newTaskTest" type="text" ng-model="newTask"  size="30"  placeholder="Describe here a new task and press Enter"/>
+		</form>
 		<ul>
     			<li ng-repeat="task in tasks">
 				<input type="checkbox" ng-model="task.isDone"/>

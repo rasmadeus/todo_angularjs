@@ -4,8 +4,7 @@ toDoApp.controller('TasksController', function($scope) {
 	$scope.tasks = [];
 
 	$scope.addNewTask = function() {
-		var enterKey = 13;
-		if (event.keyCode === enterKey && $scope.newTask) {
+		if ($scope.newTask) {
 			$scope.tasks.push({name: $scope.newTask, isDone: false});
 			$scope.newTask = '';
 		}
