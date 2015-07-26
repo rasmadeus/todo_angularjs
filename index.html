@@ -12,7 +12,8 @@
 		<ul>
     			<li ng-repeat="task in tasks">
 				<input type="checkbox" ng-model="task.isDone"/>
-      				{{task.name}} - {{getStatus(task)}}
+      				<button ng-click="removeTask(task)">Remove</button>
+				{{task.name}} - {{getStatus(task)}}
     			</li>
   		</ul>
 		<h2>Number of tasks done: {{numberOfTasksDone()}} </h2>

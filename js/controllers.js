@@ -11,6 +11,11 @@ toDoApp.controller('TasksController', function($scope) {
 		}
 	}
 
+	$scope.removeTask = function(task) {
+		var index = $scope.tasks.indexOf(task);
+		$scope.tasks.splice(index, 1);		
+	}
+
 	$scope.getStatus = function(task) {
 		return task.isDone ? 'Task is done' : 'Task isn\'t done';
 	}
