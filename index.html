@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" ng-app="toDoApp">
+	<head>
+		<meta charset="utf-8">
+  		<title>To Do notes</title>
+  		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  		<script src="js/controllers.js"></script>
+	</head>
+	<body ng-controller="TasksController">
+		<h1>To Do notes</h1>
+                <input id="newTaskTest" type="text" ng-model="newTask"  size="30"  placeholder="Describe here a new task and press Enter" ng-keyup="addNewTask()"/>
+		<ul>
+    			<li ng-repeat="task in tasks">
+				<input type="checkbox" ng-model="task.isDone"/>
+      				{{task.name}} - {{getStatus(task)}}
+    			</li>
+  		</ul>
+		<h2>Number of tasks done: {{numberOfTasksDone()}} </h2>
+		<h2>Number of tasks: {{tasks.length}}</h2>
+		<button ng-click="clear()">Remove all tasks</button>
+	</body>
+</html>
